@@ -1,0 +1,53 @@
+#main {
+    width: 100%;
+}
+
+#userListContainer {
+    width: 25%;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 25px;
+    float: left;
+    margin-right: 1%;
+}
+
+#infoContainer {
+    width: 65%;
+    overflow: hidden;
+}
+
+#info {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#yourGo {
+    background-color: #17cfcf;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 80%;
+}
+
+td {
+    border: 2px solid black
+}
+
+.notPicked {
+    background-color: #2d63c8;
+}
+
+#message {
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #229b0a;
+    text-align: center;
+}

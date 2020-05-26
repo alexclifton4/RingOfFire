@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Ring of Fire</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <h1>
+        Ring of Fire
+    </h1>
+    
+    <div id="login">
+        <p>
+            Enter your name to join:
+        </p>
+        <input id="loginName" type="text" placeholder="Name">
+        <button onclick="join()">Join</button>
+    </div>
+    
+    <div id="loading" style="display:none">
+        <p>
+            Loading...
+        </p>
+    </div>
+    
+    <div id="main" style="display:none">
+        <div id="userListContainer">
+            <b>Players online:</b>
+            <div id="userList">
+                Test<br>Test2</br>
+            </div>
+        </div>
+        <div id="infoContainer">
+            <div id="info">
+                <b>Current player:</b> <span id="currentPlayer">Not playing</span><br>
+                <b>Last round:</b> <span id="lastRound">No cards picked yet</span><br>
+                <b>Extra rules:</b> <span id="jackRules">No Jacks picked yet</span><br>
+                <b>Kings so far:</b> <span id="kings">0 out of 4</span></br>
+                <span id="gameState">
+                Game not started by host
+                </span>
+            </div>
+            <div id="yourGo" style="display: none">
+                <h3>It's your go! Pick a card</h3>
+            </div>
+        </div>
+        
+        <div id="cards"></div>
+        <div id="message" style="display:none"></div>
+    </div>
+</body>
