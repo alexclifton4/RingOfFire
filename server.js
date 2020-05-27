@@ -132,7 +132,7 @@ io.on("connection", (socket) => {
         
         // Add to list and broadcast
         state.extraRules += newRule + "<br>"
-        socket.emit("stateUpdate", state);
+        io.emit("stateUpdate", state);
     })
 });
 
