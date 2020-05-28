@@ -9,12 +9,19 @@ let mostRecent = "";
 
 // When login button is pressed
 window.join = function() {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("loading").style.display = "block";
-
     name = document.getElementById("loginName").value;
-    socket.emit("login", name);
-    loggingIn = true;
+    
+    // Make sure name isn't blank
+    if (name.trim() === "") {
+        alert("Please enter a name");
+    } else {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("loading").style.display = "block";
+
+        name = document.getElementById("loginName").value;
+        socket.emit("login", name);
+        loggingIn = true;
+    }
 };
 
 // Can't join because of an error
