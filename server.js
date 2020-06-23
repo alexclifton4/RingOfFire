@@ -56,6 +56,11 @@ io.on("connection", (socket) => {
             io.emit("users", users);
         }
     });
+    
+    // request for an updated user list
+    socket.on("getUsers", data => {
+      io.emit("users", users)
+    })
 
     // Start game button pressed
     socket.on("start", (data) => {
@@ -148,7 +153,7 @@ const nameTaken = function(name) {
     return taken;
 }
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 server.listen(port, () => {
     console.log("Listening on port " + port);
 })

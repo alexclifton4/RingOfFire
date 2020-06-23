@@ -3,10 +3,19 @@
     <title>Host controls</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/host.js"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
     <h1>Host controls</h1>
     <button onclick="startGame()">Start game</button> Restarts if already playing</br>
-    <button onclick="stopGame()">Stop game</button> Resets and kicks everyone out
+    <button onclick="stopGame()">Stop game</button> Resets and kicks everyone out<br>
+    <hr>
+    
+    <div id="userListContainer">
+            <b>Players online:</b>
+            <div id="userList">
+                <i>none</i>
+            </div>
+    </div>
 </body>
 </html>
