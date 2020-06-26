@@ -30,16 +30,28 @@
 
 table {
     border-collapse: collapse;
+    table-layout: fixed;
     width: 100%;
     height: 80%;
 }
 
 td {
-    border: 2px solid black
+    border: 2px solid black;
+    text-align: center;
+    verticle-align: middle;
+    color: white;
 }
 
 .notPicked {
     background-color: #2d63c8;
+}
+
+.cardRed {
+  background-color: crimson;
+}
+
+.cardBlack {
+  background-color: black;
 }
 
 #message {

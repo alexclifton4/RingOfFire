@@ -57,7 +57,6 @@ io.on("connection", (socket) => {
         }
         
         // If no one is in, end the game
-        console.log(Object.keys(users).length)
         if (Object.keys(users).length == 0) {
           playing = false
           console.log("No players, stopping game")
@@ -85,7 +84,7 @@ io.on("connection", (socket) => {
             
             // Set all display cards
             for (let i = 0; i < 52; i++) {
-                state.displayCards[i] = true;
+                state.displayCards[i] = "hidden";
             }
             
             // Send to clients
@@ -102,12 +101,12 @@ io.on("connection", (socket) => {
     })
     
     // When a card is picked
-    socket.on("cardPicked", (index) => {
-        // Remove the display card
-        state.displayCards[index] = false;
-        
+  socket.on("cardPicked", (index) => {
         let card = deck.pop();
         let description = cards.getRule(card)
+        
+        // Set the display card
+        state.displayCards[index] = card
         
         // Deal with king
         if (card.split(" ")[0] === "King") {

@@ -129,12 +129,20 @@ const drawCards = function(cards) {
         table += "<tr>"
         // Add four cards to the row
         for (let x = 0; x < 4; x++) {
-            if (cards[index]) {
+            if (cards[index] == "hidden") {
                 table += `<td onclick="cardPicked(${index})" class="notPicked"></td>`
                 index++;
             } else {
-                table += "<td></td>"
-                index++;
+              // See if the card is red or black
+              let suit = cards[index].split(" ")[2]
+              if (suit == "Hearts" || suit == "Diamonds") {
+                // Red
+                table += `<td class="cardRed">${cards[index]}</td>`
+              } else {
+                // Black
+                table += `<td class="cardBlack">${cards[index]}</td>`
+              }
+            index++;
             }
         }
         table += "</tr>"
