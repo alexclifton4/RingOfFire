@@ -55,6 +55,13 @@ io.on("connection", (socket) => {
             userIds.splice(userIds.indexOf(socket.id), 1);
             io.emit("users", users);
         }
+        
+        // If no one is in, end the game
+        console.log(Object.keys(users).length)
+        if (Object.keys(users).length == 0) {
+          playing = false
+          console.log("No players, stopping game")
+        }
     });
     
     // request for an updated user list
